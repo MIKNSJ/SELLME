@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Marketplace </title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+  </head>
+
+  <body>
+      <h1> Marketplace Listings </h1>
+      <ul>
+        <% for (let item of items) { %>
+            <li><a href = "/marketplace/<%= item._id %>"><%= item.title %></a></li>
+        <% } %>
+      </ul>
+  </body>
+</html>

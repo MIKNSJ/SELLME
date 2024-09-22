@@ -22,13 +22,18 @@ app.get("/", (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("You have connected to the PORT:3000.");
+app.get("/marketplace", async (req, res) => {
+    const items = await Item.find({});
+    res.render("marketplace", {items});
 })
 
 
-app.get("/testnewitem", async (req, res) => {
-    const test_item = new Item({category: "1", title: "1", condition: "1", description: "1", location: "1", name: "1", email: "1", phone: "1"});
-    await test_item.save();
-    res.send(test_item);
+app.get("/marketplace/:id", async (req, res) => {
+    const item = await Item.findById(req.params.id);
+    res.render("listing", {item});
+})
+
+
+app.listen(3000, () => {
+    console.log("You have connected to the PORT:3000.");
 })
