@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 const Item = require("./models/item");
 
 
@@ -15,6 +16,8 @@ db.once("open", () => {
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 
 app.get("/", (req, res) => {
@@ -28,9 +31,39 @@ app.get("/marketplace", async (req, res) => {
 })
 
 
+app.get("/marketplace/new", (req, res) => {
+    res.render("new");
+})
+
+
+app.post("/marketplace/submit", async (req, res) => {
+    const item = new Item(req.body.item);
+    await item.save();
+    res.redirect(`/marketplace/${item._id}`);
+})
+
+
 app.get("/marketplace/:id", async (req, res) => {
     const item = await Item.findById(req.params.id);
     res.render("listing", {item});
+})
+
+
+app.get("/marketplace/:id/edit", async (req, res) => {
+    const item = await Item.findById(req.params.id);
+    res.render("edit", {item});
+})
+
+
+app.put("/marketplace/:id", async (req, res) => {
+    const item = await Item.findByIdAndUpdate(req.params.id, {...req.body.item})
+    res.redirect(`/marketplace/${item._id}`);
+})
+
+
+app.delete("/marketplace/:id", async (req, res) => {
+    await Item.findByIdAndDelete(req.params.id);
+    res.redirect("/marketplace");
 })
 
 

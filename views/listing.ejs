@@ -16,5 +16,10 @@
       <h2> <%= item.name %> </h2>
       <h2> <%= item.email %> </h2>
       <h2> <%= item.phone %> </h2>
+      <a href = "/marketplace/<%= item._id %>/edit">Edit</a>
+      <form action = "/marketplace/<%= item._id %>?_method=DELETE" method = "post">
+        <input type = "submit" id = "del_button" value = "Delete">
+      </form>
+      <a href = "/marketplace">Back to Marketplace</a>
   </body>
 </html>
