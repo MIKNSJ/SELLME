@@ -1,62 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Update Item </title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-  </head>
+<% layout("template") %>
+<h1> Update a existing listing for your item. </h1>
 
-  <body>
-      <h1> Update a existing listing for your item. </h1>
+<form action = "/marketplace/<%= item._id %>?_method=PUT" method = "post">
+<div>
+    <label for = "category">Category</label>
+    <input type = "text" id = "category" name = "item[category]" value = "<%= item.category %>">
+</div>
 
-      <form action = "/marketplace/<%= item._id %>?_method=PUT" method = "post">
-        <div>
-          <label for = "category">Category</label>
-          <input type = "text" id = "category" name = "item[category]" value = "<%= item.category %>">
-        </div>
+<div>
+    <label for = "title">Title</label>
+    <input type = "text" id = "title" name = "item[title]" value = "<%= item.title %>">
+</div>
 
-        <div>
-            <label for = "title">Title</label>
-            <input type = "text" id = "title" name = "item[title]" value = "<%= item.title %>">
-        </div>
+<div>
+    <label for = "condition">Condition</label>
+    <input type = "text" id = "condition" name = "item[condition]" value = "<%=item.condition %>">
+</div>
 
-        <div>
-            <label for = "condition">Condition</label>
-            <input type = "text" id = "condition" name = "item[condition]" value = "<%=item.condition %>">
-        </div>
+<div>
+    <label for = "Description">Description</label>
+    <input type = "text" id = "description" name = "item[description]" value = "<%= item.description %>">
+</div>
 
-        <div>
-            <label for = "Description">Description</label>
-            <input type = "text" id = "description" name = "item[description]" value = "<%= item.description %>">
-        </div>
+<div>
+    <label for = "location">Location</label>
+    <input type = "text" id = "location" name = "item[location]" value = "<%= item.location %>">
+</div>
 
-        <div>
-            <label for = "location">Location</label>
-            <input type = "text" id = "location" name = "item[location]" value = "<%= item.location %>">
-        </div>
+<div>
+    <label for = "price">Price</label>
+    <input type = "text" id = "price" name = "item[price]" value = "<%= item.price %>">
+</div>
 
-        <div>
-            <label for = "price">Price</label>
-            <input type = "text" id = "price" name = "item[price]" value = "<%= item.price %>">
-        </div>
-        
-        <div>
-            <label for = "name">Name</label>
-            <input type = "text" id = "name" name = "item[name]" value = "<%= item.name %>">
-        </div>
+<div>
+    <label for = "name">Name</label>
+    <input type = "text" id = "name" name = "item[name]" value = "<%= item.name %>">
+</div>
 
-        <div>
-            <label for = "email">Email</label>
-            <input type = "text" id = "email" name = "item[email]" value = "<%= item.email %>">
-        </div>
+<div>
+    <label for = "email">Email</label>
+    <input type = "text" id = "email" name = "item[email]" value = "<%= item.email %>">
+</div>
 
-        <div>
-            <label for = "phone">Phone</label>
-            <input type = "text" id = "phone" name = "item[phone]" value = "<%= item.phone %>">
-        </div>
+<div>
+    <label for = "phone">Phone</label>
+    <input type = "text" id = "phone" name = "item[phone]" value = "<%= item.phone %>">
+</div>
 
-        <input type = "submit" id = "submit" value = "Update">
-      </form>
-  </body>
-</html>
+<input type = "submit" id = "submit" value = "Update">
+</form>

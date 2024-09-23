@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= item.title %> </title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-  </head>
-
-  <body>
-      <h1> <%= item.title %> </h1>
-      <h2> <%= item.category %> </h2>
-      <h2> <%= item.condition %> </h2>
-      <h2> <%= item.description %> </h2>
-      <h2> <%= item.location %> </h2>
-      <h2> <%= item.name %> </h2>
-      <h2> <%= item.email %> </h2>
-      <h2> <%= item.phone %> </h2>
-      <a href = "/marketplace/<%= item._id %>/edit">Edit</a>
-      <form action = "/marketplace/<%= item._id %>?_method=DELETE" method = "post">
-        <input type = "submit" id = "del_button" value = "Delete">
-      </form>
-      <a href = "/marketplace">Back to Marketplace</a>
-  </body>
-</html>
+<% layout("template") %>
+  <h1> <%= item.title %> </h1>
+  <h2> <%= item.category %> </h2>
+  <h2> <%= item.condition %> </h2>
+  <h2> <%= item.description %> </h2>
+  <h2> <%= item.location %> </h2>
+  <h2> <%= item.name %> </h2>
+  <h2> <%= item.email %> </h2>
+  <h2> <%= item.phone %> </h2>
+  <a href = "/marketplace/<%= item._id %>/edit">Edit</a>
+  <form action = "/marketplace/<%= item._id %>?_method=DELETE" method = "post">
+    <input type = "submit" id = "del_button" value = "Delete">
+  </form>
+  <a href = "/marketplace">Back to Marketplace</a>
