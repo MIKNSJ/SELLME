@@ -18,13 +18,13 @@
 
     <form action = "/marketplace/<%= item._id %>?_method=PUT" method = "post" class="d-flex flex-column gap-3 mt-5">
         <div class="d-flex flex-column gap-1">
-            <label for = "category">Category</label>
-            <input type = "text" id = "category" name = "item[category]" value = "<%= item.category %>" class="form-control">
-        </div>
-
-        <div class="d-flex flex-column gap-1">
             <label for = "title">Title</label>
             <input type = "text" id = "title" name = "item[title]" value = "<%= item.title %>" class="form-control">
+        </div>
+        
+        <div class="d-flex flex-column gap-1">
+            <label for = "category">Category</label>
+            <input type = "text" id = "category" name = "item[category]" value = "<%= item.category %>" class="form-control">
         </div>
 
         <div class="d-flex flex-column gap-1">
@@ -44,22 +44,35 @@
 
         <div class="d-flex flex-column gap-1">
             <label for = "price">Price</label>
-            <input type = "text" id = "price" name = "item[price]" value = "<%= item.price %>" class="form-control">
+            <div class = "input-group">
+                <span class="input-group-text">$</span>
+                <input type = "text" id = "price" name = "item[price]" value = "<%= item.price %>" class="form-control">
+                <span class="input-group-text">.00</span>
+            </div>
         </div>
 
         <div class="d-flex flex-column gap-1">
-            <label for = "name">Name</label>
-            <input type = "text" id = "name" name = "item[name]" value = "<%= item.name %>" class="form-control">
+            <label for = "name">Username</label>
+            <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input type = "text" id = "name" name = "item[name]" value = "<%= item.name %>" class="form-control">
+            </div>
         </div>
 
         <div class="d-flex flex-column gap-1">
             <label for = "email">Email</label>
-            <input type = "text" id = "email" name = "item[email]" value = "<%= item.email %>" class="form-control">
+            <div class = "input-group">
+                <input type = "text" id = "email" name = "item[email]" value = "<%= item.email %>" class="form-control">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
         </div>
 
         <div class="d-flex flex-column gap-1">
             <label for = "phone">Phone</label>
-            <input type = "text" id = "phone" name = "item[phone]" value = "<%= item.phone %>" class="form-control">
+            <div class = "input-group">
+                <input type = "text" id = "phone" name = "item[phone]" value = "<%= item.phone %>" class="form-control">
+                <span class="input-group-text">(XXX) XXX-XXXX</span>
+            </div>
         </div>
 
         <input type = "submit" id = "submit" value = "Update" class="btn btn-success mt-3 align-self-end" role="button">
