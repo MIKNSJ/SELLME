@@ -1,6 +1,6 @@
 const categories = [
     "Clothing",
-    "Electronics (like smartphones or laptops)",
+    "Electronics",
     "Furniture",
     "Books",
     "Handmade crafts",
