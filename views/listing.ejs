@@ -1,6 +1,16 @@
 <% layout("template") %>
   <div class="d-flex flex-column">
-    <div class="d-flex flex-column align-items-center gap-5">
+    <div class="d-flex justify-content-between gap-3">
+      <a href = "/marketplace" class="btn btn-primary text-decoration-none text-white" role="button">Marketplace</a>
+      <div class="d-flex gap-3 align-items-center">
+        <a href = "/marketplace/<%= item._id %>/edit" class="btn btn-success text-decoration-none text-white" role="button">Edit</a>
+        <form action = "/marketplace/<%= item._id %>?_method=DELETE" method = "post">
+          <input type = "submit" class = "btn btn-danger text-white" role ="button" id = "del_button" value = "Delete">
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center gap-5 mt-5">
       <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg" class="img-fluid" alt="sunflower">
       <h3> <%= item.title %> </h3>
     </div>
@@ -34,15 +44,5 @@
         <h5> Phone </h5>
         <p class="form-control"> <%= item.phone %> </p>
       </div>
-    </div>
-
-    <div class="d-flex justify-content-end gap-3 mt-3">
-      <button type="button" class="btn btn-success">
-        <a href = "/marketplace/<%= item._id %>/edit" class="text-decoration-none text-black">Edit</a>
-      </button>
-      <form action = "/marketplace/<%= item._id %>?_method=DELETE" method = "post">
-        <input type = "submit" class = "btn btn-danger text-black" id = "del_button" value = "Delete">
-      </form>
-      <button type="button" class="btn btn-info">Message</button>
     </div>
   </div>
