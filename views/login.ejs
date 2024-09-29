@@ -1,26 +1,28 @@
 <% layout("template") %>
-<div class="d-flex flex-column">
-    <h1> Sign in to your account. </h1>
+<main class="container my-5">
+    <div class="d-flex flex-column">
+        <h1> Sign in to your account. </h1>
 
-    <div class="d-flex gap-3 mt-5">
-        <a href="/" class="btn btn-primary text-decoration-none text-white" role="button">Home</a>
-        <a href="/marketplace" class="btn btn-info text-decoration-none text-white" role="button">Marketplace</a>
-    </div>
-
-    <form action = "" method = "post" class="d-flex flex-column gap-3 mt-5">
-        <div class = "d-flex flex-column gap-1"></div>
-            <label for = "name">Username</label>
-            <div class="input-group">
-                <span class="input-group-text">@</span>
-                <input type = "text" id = "name" name = "" class="form-control">
-            </div>
-
-            <label for = "password">Password</label>
-            <div class="input-group">
-                <input type = "text" id = "password" name = "" class="form-control">
-            </div>
-
-            <input type = "submit" id = "submit" value = "Login" class="btn btn-success mt-3 align-self-end" role="button">
+        <div class="d-flex gap-3 mt-5">
+            <a href="/" class="btn btn-primary text-decoration-none text-white" role="button">Home</a>
+            <a href="/marketplace" class="btn btn-info text-decoration-none text-white" role="button">Marketplace</a>
         </div>
-    </form>
-</div>
+
+        <form action = "" method = "post" class="d-flex flex-column gap-3 mt-5">
+            <div class = "d-flex flex-column gap-1"></div>
+                <label for = "name">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type = "text" id = "name" name = "" class="form-control">
+                </div>
+
+                <label for = "password">Password</label>
+                <div class="input-group">
+                    <input type = "text" id = "password" name = "" class="form-control">
+                </div>
+
+                <input type = "submit" id = "submit" value = "Login" class="btn btn-success mt-3 align-self-end" role="button">
+            </div>
+        </form>
+    </div>
+</main>

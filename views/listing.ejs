@@ -1,4 +1,5 @@
 <% layout("template") %>
+<main class="container my-5">
   <div class="d-flex flex-column">
     <div class="d-flex justify-content-between gap-3">
       <a href = "/marketplace" class="btn btn-primary text-decoration-none text-white" role="button">Marketplace</a>
@@ -11,7 +12,7 @@
     </div>
 
     <div class="d-flex flex-column align-items-center gap-5 mt-5">
-      <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg" class="img-fluid" alt="sunflower">
+      <img src="../static/images/sunflower.jpg" class="img-fluid" alt="sunflower">
       <h3> <%= item.title %> </h3>
     </div>
 
@@ -20,29 +21,41 @@
         <h5> Category </h5>
         <p class="form-control"> <%= item.category %> </p>
       </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Condition </h5>
         <p class="form-control"> <%= item.condition %> </p>
       </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Description </h5>
         <p class="form-control"> <%= item.description %> </p>
       </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Location </h5>
         <p class="form-control"> <%= item.location %> </p>
       </div>
+
+      <div class="d-flex flex-column gap-1">
+        <h5> Price </h5>
+        <p class="form-control"> <%= item.price %> </p>
+      </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Username </h5>
         <p class="form-control"> <%= item.name %> </p>
       </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Email </h5>
         <p class="form-control"> <%= item.email %> </p>
       </div>
+
       <div class = "d-flex flex-column gap-1">
         <h5> Phone </h5>
         <p class="form-control"> <%= item.phone %> </p>
       </div>
     </div>
   </div>
+</main>

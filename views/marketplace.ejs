@@ -1,29 +1,31 @@
 <% layout("template") %>
-<div class="d-flex flex-column">
-  <h1> Marketplace Listings </h1>
+<main class="container my-5">
+  <div class="d-flex flex-column">
+    <h1> Marketplace Listings </h1>
 
-  <div class="d-flex justify-content-between gap-3 mt-5">
-    <a href="/" class="btn btn-primary text-decoration-none text-white" role="button">Home</a>
-    <div class="d-flex justify-content-end gap-3">
-      <a href="" class="btn btn-info text-decoration-none text-white" role="button">My Listings</a>
-      <a href="/marketplace/new" class="btn btn-primary text-decoration-none text-white" role="button">New</a>
+    <div class="d-flex justify-content-between gap-3 mt-5">
+      <a href="/" class="btn btn-primary text-decoration-none text-white" role="button">Home</a>
+      <div class="d-flex justify-content-end gap-3">
+        <a href="" class="btn btn-info text-decoration-none text-white" role="button">My Listings</a>
+        <a href="/marketplace/new" class="btn btn-primary text-decoration-none text-white" role="button">New</a>
+      </div>
+    </div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4 mt-3">
+      <% for (let item of items) { %>
+        <div class = "col">
+          <div class="card h-100">
+            <a class="text-decoration-none text-black" href = "./marketplace/<%= item._id %>">
+              <img src="../static/images/sunflower.jpg" class="card-img-top" alt="sunflower">
+              <div class="card-body">
+                <h4 class="card-title"><%= item.title %></h4>
+                <h5 class="card-text">$<%= item.price %></h5>
+                <p class="card-subtitle text-body-secondary"><%= item.condition %></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% } %>
     </div>
   </div>
-
-  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-4 mt-3">
-    <% for (let item of items) { %>
-      <div class = "col">
-        <div class="card h-100">
-          <a class="text-decoration-none text-black" href = "./marketplace/<%= item._id %>">
-            <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg" class="card-img-top" alt="sunflower">
-            <div class="card-body">
-              <h4 class="card-title"><%= item.title %></h4>
-              <h5 class="card-text">$<%= item.price %></h5>
-              <p class="card-subtitle text-body-secondary"><%= item.condition %></p>
-            </div>
-          </a>
-        </div>
-      </div>
-    <% } %>
-  </div>
-</div>
+</main>

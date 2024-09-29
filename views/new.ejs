@@ -1,74 +1,76 @@
 <% layout("template") %>
-<div class="d-flex flex-column">
-    <h1> Create a new listing. </h1>
+<main class="container my-5">
+    <div class="d-flex flex-column">
+        <h1> Create a new listing. </h1>
 
-    <div class="d-flex justify-content-between mt-5 gap-3">
-        <a href = "/marketplace" class="btn btn-primary text-decoration-none text-white" role="button">Marketplace</a>
+        <div class="d-flex justify-content-between mt-5 gap-3">
+            <a href = "/marketplace" class="btn btn-primary text-decoration-none text-white" role="button">Marketplace</a>
+        </div>
+
+        <div class="d-flex align-items-center mt-5">
+            <img src="../static/images/sunflower.jpg" class="img-fluid" alt="sunflower">
+        </div>
+
+        <form action = "/marketplace/submit" method = "post" class="d-flex flex-column gap-3 mt-5">
+            <div class = "d-flex flex-column gap-1">
+                <label for = "title">Title</label>
+                <input type = "text" id = "title" name = "item[title]" class="form-control">
+            </div>
+            
+            <div class = "d-flex flex-column gap-1">
+                <label for = "category">Category</label>
+                <input type = "text" id = "category" name = "item[category]" class="form-control">
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "condition">Condition</label>
+                <input type = "text" id = "condition" name = "item[condition]" class="form-control">
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "Description">Description</label>
+                <textarea type = "text" id = "description" name = "item[description]" class="form-control"></textarea>
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "location">Location</label>
+                <input type = "text" id = "location" name = "item[location]" class="form-control">
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "price">Price</label>
+                <div class = "input-group">
+                    <span class="input-group-text">$</span>
+                    <input type = "text" id = "price" name = "item[price]" class="form-control">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "name">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type = "text" id = "name" name = "item[name]" class="form-control">
+                </div>
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "email">Email</label>
+                <div class="input-group">
+                    <input type = "text" id = "email" name = "item[email]" class="form-control">
+                    <span class="input-group-text">@example.com</span>
+                </div>
+            </div>
+
+            <div class = "d-flex flex-column gap-1">
+                <label for = "phone">Phone</label>
+                <div class="input-group">
+                    <input type = "text" id = "phone" name = "item[phone]" class="form-control">
+                    <span class="input-group-text">(XXX) XXX-XXXX</span>
+                </div>
+            </div>
+
+            <input type = "submit" id = "submit" value = "Submit" class="btn btn-success mt-3 align-self-end" role="button">
+        </form>
     </div>
-
-    <div class="d-flex align-items-center mt-5">
-        <img src="https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg" class="img-fluid" alt="sunflower">
-    </div>
-
-    <form action = "/marketplace/submit" method = "post" class="d-flex flex-column gap-3 mt-5">
-        <div class = "d-flex flex-column gap-1">
-            <label for = "title">Title</label>
-            <input type = "text" id = "title" name = "item[title]" class="form-control">
-        </div>
-        
-        <div class = "d-flex flex-column gap-1">
-            <label for = "category">Category</label>
-            <input type = "text" id = "category" name = "item[category]" class="form-control">
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "condition">Condition</label>
-            <input type = "text" id = "condition" name = "item[condition]" class="form-control">
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "Description">Description</label>
-            <input type = "text" id = "description" name = "item[description]" class="form-control">
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "location">Location</label>
-            <input type = "text" id = "location" name = "item[location]" class="form-control">
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "price">Price</label>
-            <div class = "input-group">
-                <span class="input-group-text">$</span>
-                <input type = "text" id = "price" name = "item[price]" class="form-control">
-                <span class="input-group-text">.00</span>
-            </div>
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "name">Username</label>
-            <div class="input-group">
-                <span class="input-group-text">@</span>
-                <input type = "text" id = "name" name = "item[name]" class="form-control">
-            </div>
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "email">Email</label>
-            <div class="input-group">
-                <input type = "text" id = "email" name = "item[email]" class="form-control">
-                <span class="input-group-text">@example.com</span>
-            </div>
-        </div>
-
-        <div class = "d-flex flex-column gap-1">
-            <label for = "phone">Phone</label>
-            <div class="input-group">
-                <input type = "text" id = "phone" name = "item[phone]" class="form-control">
-                <span class="input-group-text">(XXX) XXX-XXXX</span>
-            </div>
-        </div>
-
-        <input type = "submit" id = "submit" value = "Submit" class="btn btn-success mt-3 align-self-end" role="button">
-    </form>
-</div>
+</main>
