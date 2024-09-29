@@ -69,6 +69,16 @@ app.delete("/marketplace/:id", async (req, res) => {
 })
 
 
+app.get("/login", (req, res) => {
+    res.render("login");
+})
+
+
+app.post("/login", (req, res) => {
+    res.redirect("/marketplace");
+})
+
+
 app.listen(3000, () => {
     console.log("You have connected to the PORT:3000.");
 })
