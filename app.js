@@ -75,6 +75,11 @@ app.get("/login", (req, res) => {
 })
 
 
+app.get("/create", (req, res) => {
+    res.render("create");
+})
+
+
 app.post("/login", (req, res) => {
     res.redirect("/marketplace");
 })
